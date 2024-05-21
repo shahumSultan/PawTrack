@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
 } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 // CUSTOM COMPONENTS //
@@ -20,6 +21,7 @@ const PETS = require("../assets/images/Pets.png");
 export default function LoginPage({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <View style={styles.circleContainer}>
         <Image source={CIRCLES} />
       </View>
@@ -38,7 +40,7 @@ export default function LoginPage({ navigation }) {
             label="Password"
             style={styles.input}
             inputType={"password"}
-            icon={<MaterialIcons name="lock" size={15} />}
+            icon={<MaterialIcons name="lock-outline" size={15} />}
           />
         </KeyboardAvoidingView>
         <View style={{ alignItems: "center", marginTop: 30 }}>
@@ -48,7 +50,7 @@ export default function LoginPage({ navigation }) {
           style={{
             flexDirection: "row",
             justifyContent: "center",
-            marginTop: 100
+            marginTop: 100,
           }}
         >
           <Text>New to the app?</Text>
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
   },
   petContainer: {
     flex: 0.55,
+    alignSelf: "center",
   },
   mainContainer: {
     flex: 1,
