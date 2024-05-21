@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 // CUSTOM COMPONENTS //
 import CustomButton from "../components/CustomButton";
@@ -10,6 +11,7 @@ const PETS = require("../assets/images/Pets.png");
 export default function LandingPage({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <View style={styles.circleContainer}>
         <Image source={CIRCLES} />
       </View>
@@ -22,7 +24,10 @@ export default function LandingPage({ navigation }) {
         <Text style={styles.subHeading}>
           Keep Your Furry Friend Close: Never Lose Your Pet with Our App!
         </Text>
-        <CustomButton label={"Get Started"} onPress={() => navigation.navigate('Login')} />
+        <CustomButton
+          label={"Get Started"}
+          onPress={() => navigation.navigate("Login")}
+        />
       </View>
     </View>
   );
@@ -47,7 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   subHeading: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 18,
     marginBottom: 80,
   },
